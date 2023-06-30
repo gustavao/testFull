@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Asignar Calificación</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+        <form [formGroup]="options">
+            <div>
+                <mat-form-field>
+                    <mat-label>Calificación</mat-label>
+                    <input type="number" matInput formControlName="calificacion">
+                </mat-form-field>
+            </div>
+            <div>
+                <label>Status: </label>
+                <mat-radio-group formControlName="status">
+                    <mat-radio-button value="aprobado">Aprobado</mat-radio-button>
+                    <mat-radio-button value="reprobado">Reprobado</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+        </form>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="false">Cancelar</button>
+    <button [disabled]="options.invalid" mat-button [mat-dialog-close]="options.value">Guardar</button>
+</mat-dialog-actions>

@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Agregar nuevo Alumno</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+        <form [formGroup]="options">
+            <div>
+                <mat-form-field>
+                    <mat-label>Nombre de Alumno</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Edad de Alumno</mat-label>
+                    <input type="number" matInput formControlName="edad">
+                </mat-form-field>
+            </div>
+            <div>
+                <label>Status: </label>
+                <mat-radio-group formControlName="status">
+                    <mat-radio-button value="presencial">Presencial</mat-radio-button>
+                    <mat-radio-button value="online">Online</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </form>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="false">Cancelar</button>
+    <button [disabled]="options.invalid" mat-button [mat-dialog-close]="options.value">Guardar</button>
+</mat-dialog-actions>
